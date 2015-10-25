@@ -1,4 +1,5 @@
 import 'polyfill';
+import 'backbone-nested';
 import 'backbone-routefilter';
 import 'backbone-stickit';
 import 'backbone-validation';

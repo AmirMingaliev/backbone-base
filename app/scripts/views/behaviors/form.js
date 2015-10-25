@@ -49,14 +49,14 @@ export default class FormBehavior extends Marionette.Behavior {
   }
 
   onValid(view, attr) {
-    let $el = view.$(`[name=${attr}]`);
+    let $el = view.$(`[name="${attr}"]`);
     let $group = $el.closest('.form-group');
 
     $group.removeClass('has-error').tooltip('destroy');
   }
 
   onInvalid(view, attr, error) {
-    let $el = view.$(`[name=${attr}]`);
+    let $el = view.$(`[name="${attr}"]`);
     let $group = $el.closest('.form-group');
 
     $group.addClass('has-error').tooltip({

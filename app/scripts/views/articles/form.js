@@ -6,7 +6,11 @@ import template from 'templates/articles/form';
 
 export default class ArticlesFormView extends Marionette.ItemView {
   constructor(...args) {
-    this.model = new Article(Session.currentUser().pick('avatar', 'name'));
+    this.model = new Article({
+      'article.name': Session.currentUser().get('user.name'),
+      'article.avatar': Session.currentUser().get('user.avatar')
+    });
+
     this.template = template;
 
     this.events = {
@@ -14,15 +18,15 @@ export default class ArticlesFormView extends Marionette.ItemView {
     };
 
     this.bindings = {
-      '[name="text"]': {
-        observe: 'text',
+      '[name="article.text"]': {
+        observe: 'article.text',
         updateView: false,
         setOptions: {
           validate: true
         }
       },
-      '[name="title"]': {
-        observe: 'title',
+      '[name="article.title"]': {
+        observe: 'article.title',
         updateView: false,
         setOptions: {
           validate: true
@@ -37,7 +41,7 @@ export default class ArticlesFormView extends Marionette.ItemView {
     };
 
     this.templateHelpers = {
-      user: user
+      userHelper: user
     };
 
     super(...args);
@@ -47,6 +51,7 @@ export default class ArticlesFormView extends Marionette.ItemView {
     event.preventDefault();
 
     if (this.model.isValid(true)) {
+      console.log(this.model);
       this.collection.create(this.model, { wait: true });
     }
   }

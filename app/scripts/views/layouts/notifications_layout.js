@@ -2,7 +2,7 @@ import App from 'scripts/application';
 import NotificationsItemView from 'scripts/views/notifications/notification';
 import template from 'templates/layouts/notifications_layout';
 
-const delaySpeed = 3000;
+const DELAY_SPEED = 3000;
 
 export default class NotificationsLayout extends Marionette.LayoutView {
   constructor(...args) {
@@ -29,7 +29,7 @@ export default class NotificationsLayout extends Marionette.LayoutView {
       message: data.message,
       type: typeClass
     }));
-    this.clearNotificationsInterval = setTimeout(() => { this.clearRegion(); }, delaySpeed);
+    this.clearNotificationsInterval = setTimeout(() => { this.clearRegion(); }, DELAY_SPEED);
   }
 
   destroyNotification() {

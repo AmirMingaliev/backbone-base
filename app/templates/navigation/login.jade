@@ -1,8 +1,8 @@
 form.login-form.form-inline(role='form')
   .form-group
-    input.form-control(type='email', name='email', placeholder='Enter email')
+    input.form-control(type='email', name='user.email', placeholder='Enter email')
   .form-group
-    input.form-control(type='password', name='password', placeholder='Password')
+    input.form-control(type='password', name='user.password', placeholder='Password')
   button.btn.btn-default(type='submit') Login
   span - or -
-  a(href=routes.signupIndexPath()).btn.btn-default.sign-up Register
+  a(href=routesHelper.signupIndexPath()).btn.btn-default.sign-up Register

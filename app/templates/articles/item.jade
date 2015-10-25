@@ -1,5 +1,5 @@
 .pull-left
-  .media-object.avatar(style='background-image: url(#{user.avatar(avatar)})')
+  .media-object.avatar(style='background-image: url(#{userHelper.avatar(avatar)})')
 .media-body
   h4.media-heading #{title}
   i
@@ -9,5 +9,5 @@
   p
     | #{text}
   .article-navigation
-    a(href=routes.articlesShowPath(id)) More &raquo;
+    a(href=routesHelper.articlesShowPath(id)) More &raquo;
     span.comments-count Comments: #{comments_count}

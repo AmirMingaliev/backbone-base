@@ -8,4 +8,8 @@ export default class Articles extends AppCollection {
 
     super(...args);
   }
+
+  parse(response) {
+    return response.articles;
+  }
 }

@@ -1,10 +1,10 @@
 .avatar-container
-  .avatar(style='background-image: url(#{user.avatar(avatar)})')
+  .avatar(style='background-image: url(#{userHelper.avatar(article.avatar)})')
 .text-container
-  h4.media-heading #{name}, here you can write new article
+  h4.media-heading #{article.name}, here you can write new article
   form(role='form')
     .form-group
-      input.form-control(name='title', placeholder='Your title here')
+      input.form-control(name='article.title', placeholder='Your title here')
     .form-group
-      textarea.form-control(name='text', placeholder='Your text here')
+      textarea.form-control(name='article.text', placeholder='Your text here')
     input(type='submit' value='Post article' class='btn btn-primary btn-lg')

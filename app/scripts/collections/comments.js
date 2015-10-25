@@ -7,4 +7,8 @@ export default class Comments extends AppCollection {
 
     super(...args);
   }
+
+  parse(response) {
+    return response.comments;
+  }
 }

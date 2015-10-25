@@ -6,19 +6,19 @@ export default class User extends AppModel {
     this.urlRoot = 'users';
 
     this.validation = {
-      name: {
+      'user.name': {
         required: () => { return this.isSignup; }
       },
-      password: {
-        required: true
-      },
-      password_confirmation: {
-        equalTo: 'password',
-        required: () => { return this.isSignup; }
-      },
-      email: {
+      'user.email': {
         pattern: 'email',
         required: true
+      },
+      'user.password': {
+        required: true
+      },
+      'user.password_confirmation': {
+        equalTo: 'user.password',
+        required: () => { return this.isSignup; }
       }
     };
 

@@ -14,8 +14,8 @@ export default class ArticlesItemView extends Marionette.ItemView {
     };
 
     this.templateHelpers = {
-      routes: routes,
-      user: user
+      routesHelper: routes,
+      userHelper: user
     };
 
     super(...args);

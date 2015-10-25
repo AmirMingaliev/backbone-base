@@ -6,14 +6,14 @@ export default class Article extends SessionModel {
     this.urlRoot = 'articles';
 
     this.defaults = {
-      comments_count: 0
+      'article.comments_count': 0
     };
 
     this.validation = {
-      text: {
+      'article.text': {
         required: true
       },
-      title: {
+      'article.title': {
         required: true
       }
     };

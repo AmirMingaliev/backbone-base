@@ -1,8 +1,9 @@
 import App from 'scripts/application';
 import AppConfig from 'scripts/config';
 
-export default class AppModel extends Backbone.Model {
+export default class AppModel extends Backbone.NestedModel {
   constructor(...args) {
+    this.idAttribute = `${this.constructor.name.toLowerCase()}.id`;
     this.urlRoot = `${AppConfig.apiPath}/${_.result(this, 'urlRoot')}`;
 
     super(...args);
@@ -12,9 +13,10 @@ export default class AppModel extends Backbone.Model {
 
   handleErrors(model, response) {
     let message = 'Server error has occured';
+    let responseError = response.responseJSON.error;
 
-    if (response.responseJSON) {
-      let { validations, error } = response.responseJSON;
+    if (responseError) {
+      let { validations, error } = responseError;
 
       if (validations) {
         return this.trigger('validation:invalid', validations);

@@ -18,15 +18,15 @@ export default class NavigationLoginView extends Marionette.ItemView {
     };
 
     this.bindings = {
-      '[name="email"]': {
-        observe: 'email',
+      '[name="user.email"]': {
+        observe: 'user.email',
         updateView: false,
         setOptions: {
           validate: true
         }
       },
-      '[name="password"]': {
-        observe: 'password',
+      '[name="user.password"]': {
+        observe: 'user.password',
         updateView: false,
         setOptions: {
           validate: true
@@ -41,7 +41,7 @@ export default class NavigationLoginView extends Marionette.ItemView {
     };
 
     this.templateHelpers = {
-      routes: routes
+      routesHelper: routes
     };
 
     super(...args);

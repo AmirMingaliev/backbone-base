@@ -1,11 +1,13 @@
-import AppCollection from 'scripts/collections/app';
-import Article from 'scripts/models/article';
+import Articles from 'scripts/collections/app';
 
-export default class DashboardArticles extends AppCollection {
+export default class DashboardArticles extends Articles {
   constructor(...args) {
     this.url = 'dashboard';
-    this.model = Article;
 
     super(...args);
+  }
+
+  parse(response) {
+    return response.articles;
   }
 }

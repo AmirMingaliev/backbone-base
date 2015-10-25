@@ -25,6 +25,7 @@
     "babel-core": "^5.8.25",
     "babelify": "^5.0.3",
     "backbone": "^1.2.1",
+    "backbone-nested": "^2.0.4",
     "backbone-validation": "^0.11.5",
     "backbone.marionette": "^2.4.2",
     "backbone.routefilter": "git://github.com/fantactuka/backbone-route-filter",
@@ -76,6 +77,7 @@
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "underscore": "./node_modules/underscore/underscore.js",
     "backbone": "./node_modules/backbone/backbone.js",
+    "backbone-nested": "./node_modules/backbone-nested/backbone-nested.js",
     "backbone-routefilter": "./node_modules/backbone-route-filter/backbone-route-filter.js",
     "backbone-stickit": "./node_modules/backbone.stickit/backbone.stickit.js",
     "backbone-validation": "./node_modules/backbone-validation/dist/backbone-validation.js",
@@ -90,6 +92,12 @@
       "depends": [
         "jquery",
         "underscore"
+      ]
+    },
+    "backbone-nested": {
+      "exports": "Backbone",
+      "depends": [
+        "backbone"
       ]
     },
     "backbone-routefilter": {

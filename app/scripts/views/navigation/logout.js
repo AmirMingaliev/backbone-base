@@ -13,7 +13,7 @@ export default class NavigationLogoutView extends Marionette.ItemView {
     };
 
     this.templateHelpers = {
-      user: user
+      userHelper: user
     };
 
     super(...args);
